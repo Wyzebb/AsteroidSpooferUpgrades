@@ -3,11 +3,11 @@ package me.wyzebb.asteroidSpooferUpgrades;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class AsteroidSpooferUpgrades extends JavaPlugin {
+    public static AsteroidSpooferUpgrades plugin;
 
     @Override
     public void onEnable() {
-        // Plugin startup logic
-
+        plugin = this;
     }
 
     @Override
