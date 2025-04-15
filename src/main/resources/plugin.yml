@@ -1,0 +1,6 @@
+name: AsteroidSpooferUpgrades
+version: '1.0.0'
+main: me.wyzebb.asteroidSpooferUpgrades.AsteroidSpooferUpgrades
+api-version: '1.20'
+authors: [ Wyzebb ]
+description: A plugin to add various extra features to Asteroid Spoofer for the Realcraft server
