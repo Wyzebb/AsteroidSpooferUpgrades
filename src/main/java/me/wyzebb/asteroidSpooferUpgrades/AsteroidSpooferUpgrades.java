@@ -1,5 +1,7 @@
 package me.wyzebb.asteroidSpooferUpgrades;
 
+import me.wyzebb.asteroidSpooferUpgrades.events.FakePlayerDeath;
+import me.wyzebb.asteroidSpooferUpgrades.events.FakePlayerJoin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class AsteroidSpooferUpgrades extends JavaPlugin {
@@ -8,10 +10,11 @@ public final class AsteroidSpooferUpgrades extends JavaPlugin {
     @Override
     public void onEnable() {
         plugin = this;
-    }
 
-    @Override
-    public void onDisable() {
-        // Plugin shutdown logic
+        saveDefaultConfig();
+        getConfig().options().copyDefaults(true);
+
+        getServer().getPluginManager().registerEvents(new FakePlayerDeath(), this);
+        getServer().getPluginManager().registerEvents(new FakePlayerJoin(), this);
     }
 }
