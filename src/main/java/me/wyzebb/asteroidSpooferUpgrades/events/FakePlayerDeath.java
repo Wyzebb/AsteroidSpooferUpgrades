@@ -5,26 +5,24 @@ import github.scarsz.discordsrv.dependencies.jda.api.entities.Guild;
 import github.scarsz.discordsrv.dependencies.jda.api.entities.Member;
 import github.scarsz.discordsrv.objects.managers.AccountLinkManager;
 import github.scarsz.discordsrv.util.DiscordUtil;
-import net.kyori.adventure.text.Component;
+import me.serbob.asteroidapi.events.Impl.FakePlayerDeathEvent;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 
 import static me.wyzebb.asteroidSpooferUpgrades.AsteroidSpooferUpgrades.plugin;
 
-public class FakePlayerDeathEvent implements Listener {
+public class FakePlayerDeath implements Listener {
 
     private final MiniMessage mm;
 
-    public FakePlayerDeathEvent() {
+    public FakePlayerDeath() {
         this.mm = MiniMessage.miniMessage();
     }
 
-
     @EventHandler
-    public void onFakePlayerDeath(me.serbob.asteroidapi.events.Impl.FakePlayerDeathEvent event) {
+    public void onFakePlayerDeath(FakePlayerDeathEvent event) {
         AccountLinkManager manager = DiscordSRV.getPlugin().getAccountLinkManager();
         String discordId = manager.getDiscordId(event.getFakePlayer().getEntityPlayer().getUniqueId());
 
