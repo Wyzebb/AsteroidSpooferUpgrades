@@ -1,0 +1,5 @@
+# You can use the MiniMessage format on the broadcast message
+
+death-messages:
+  dm: "You just died on the server!"
+  broadcast: "<red>Offline Player <b>{player}</b> just died!</red>"
